@@ -8,23 +8,24 @@ https://github.com/mikemand/logviewer
 
 ## Installation
 
+1. run this cmd in yout laravel root
 ```bsh
-php artisan bundle:install logviewer
+php artisan bundle:install laravel-logviewer
 ```
 
-## Publish assets
-```bsh
-php artisan bundle:publish logviewer
-```
+2. copy or move the /budble/logviewer/public/logviewer.css file to your actually public directory
 
-Then edit your application/bundles.php file and add:
+
+3. Add this to your application/bundles.php file:
 
 ```php
 return array(
+
 	'logviewer' => array(
 		'location' => 'logviewer',
 		'handles' => 'logviewer'
 	)
+
 );
 ```
 
