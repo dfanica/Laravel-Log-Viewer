@@ -3669,7 +3669,7 @@ body {
   font-family: "HelveticaNeue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 18px;
-  background: #252626;
+  background: #000;
 }
 h1 {
   padding: 0 20px 10px;
@@ -3710,12 +3710,26 @@ header {
   padding: 0;
 }
 .main .error {
-  color: red;
-  background: #ffcccc;
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #b94a48;
+}
+.main .warning {
+  background-color: #faf2cc;
+	border-color: #f8e5be;
+	color: #b78c43;
 }
 .main .info {
-  background: #f3ebd9;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	color: #3a87ad;
 }
+.main .ok {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
 ul {
   list-style: none;
 }
@@ -3723,9 +3737,9 @@ li {
   padding: 6px;
 }
 .main li {
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #aaa;
+  border: 1px solid #fff;
   background-color: whiteSmoke;
+  margin: 3px 0;
 }
 .pull-right {
   float: right;
