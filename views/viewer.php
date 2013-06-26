@@ -4,13 +4,17 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Log Viewer</title>
-		<link href="<?php echo Bundle::assets('logviewer'); ?>style.css?1" rel="stylesheet" type="text/css">
+		<?php 
+		$assets = Asset::container('container');
+		$assets->add('style','logviewer.css');
+		echo $assets->styles();
+		?>
 	</head>
 
 	<body>
 
 		<header class="container-fluid">
-			<h1>Laravel Log Viewer</h1>
+			<h1>API Log Viewer</h1>
 		</header>
 
 		<div class="container-fluid">
@@ -34,6 +38,10 @@
 							<?php foreach ($contents as $key => $item): ?>
 								<?php if (strpos($item, 'ERROR') !== FALSE): ?>
 									<li class="error"><?php echo $item ?></li>
+								<?php elseif (strpos($item, 'WARNING') !== FALSE): ?>
+									<li class="warning"><?php echo $item ?></li>
+								<?php elseif (strpos($item, 'OK') !== FALSE): ?>
+									<li class="ok"><?php echo $item ?></li>
 								<?php elseif ($item != ''): ?>
 									<li class="info"><?php echo $item ?></li>
 								<?php endif ?>
